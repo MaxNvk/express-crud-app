@@ -1,0 +1,27 @@
+<div class="jumbotron text-center">
+  <h1>Create an Event</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <% if(errors.length > 0) { %>
+    <div class="alert alert-danger">
+      <% for(error of errors) { %> <%= error %><br />
+      <% } %>
+    </div>
+    <% } %>
+    <form action="/events/create" method="POST">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" />
+      </div>
+
+      <div class="from-group">
+        <label>Description</label>
+        <textarea name="description" class="form-control" rows="5"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success mt-4">Create</button>
+    </form>
+  </div>
+</div>
